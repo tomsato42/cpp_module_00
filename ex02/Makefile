@@ -64,7 +64,10 @@ forbidden:
 
 check: forbidden valgrind
 
+<<<<<<< Updated upstream
 norm:
 	norminette $(SRC) $(INC_DIR)
 
+=======
+>>>>>>> Stashed changes
 .PHONY: all clean fclean re debug valgrind forbidden check norm
