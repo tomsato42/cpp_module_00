@@ -1,4 +1,4 @@
-NAME        := REPLACE_WITH_EXECUTABLE_NAME
+NAME        := TheJobOfYourDreams
 
 CXX         := c++
 CXXFLAGS    := -Wall -Wextra -Werror -std=c++98

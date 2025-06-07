@@ -13,10 +13,6 @@ OBJ_DIR     := $(ROOT_DIR)/obj
 
 IDFLAGS     := -I$(INC_DIR)
 
-<<<<<<< Updated upstream
-# 明示的にソースファイルを列挙（ワイルドカード禁止）
-=======
->>>>>>> Stashed changes
 SRC := \
 	megaphone.cpp
 
@@ -65,10 +61,4 @@ forbidden:
 
 check: forbidden valgrind
 
-<<<<<<< Updated upstream
-norm:
-	norminette $(SRC) $(INC_DIR)
-
-=======
->>>>>>> Stashed changes
 .PHONY: all clean fclean re debug valgrind forbidden check norm

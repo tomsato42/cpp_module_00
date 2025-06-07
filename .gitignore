@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# Ignore personal project files
+megaphone
+MyAwesomePhoneBook
+TheJobOfYourDreams
+*/obj
