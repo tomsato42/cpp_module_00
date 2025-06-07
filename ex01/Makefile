@@ -1,4 +1,4 @@
-NAME        := REPLACE_WITH_EXECUTABLE_NAME
+NAME        := MyAwesomePhoneBook
 
 CXX         := c++
 CXXFLAGS    := -Wall -Wextra -Werror -std=c++98
@@ -13,11 +13,10 @@ OBJ_DIR     := $(ROOT_DIR)/obj
 
 IDFLAGS     := -I$(INC_DIR)
 
-# 明示的にソースファイルを列挙（ワイルドカード禁止）
 SRC := \
 	main.cpp \
-	ClassA.cpp \
-	ClassB.cpp
+	Contact.cpp \
+	PhoneBook.cpp \
 
 OBJ := $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRC))
 
@@ -63,8 +62,5 @@ forbidden:
 	@grep -nr --color -E '\b(malloc|calloc|realloc|free|printf)\b' $(SRC_DIR) || true
 
 check: forbidden valgrind
-
-norm:
-	norminette $(SRC) $(INC_DIR)
 
 .PHONY: all clean fclean re debug valgrind forbidden check norm
