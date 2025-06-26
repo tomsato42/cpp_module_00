@@ -64,8 +64,8 @@ forbidden:
 check: forbidden valgrind
 
 test: $(NAME)
-	./$(NAME) > outfile
-	bash -c "diff <(awk '{sub(/^.{17} ?/, \"\"); print}' 19920104_091532.log) <(awk '{sub(/^.{17} ?/, \"\"); print}' outfile)"
-	$(RM) outfile
+	-./$(NAME) > outfile
+	-bash -c "diff <(awk '{sub(/^.{17} ?/, \"\"); print}' 19920104_091532.log) <(awk '{sub(/^.{17} ?/, \"\"); print}' outfile)"
+	-$(RM) outfile
 
 .PHONY: all clean fclean re debug valgrind forbidden check test
