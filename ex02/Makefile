@@ -16,7 +16,7 @@ IDFLAGS     := -I$(INC_DIR)
 # ============ ARGS ============
 SRC := \
 	Account.cpp \
-	test.cpp \
+	tests.cpp \
 
 OBJ := $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRC))
 
@@ -63,4 +63,9 @@ forbidden:
 
 check: forbidden valgrind
 
-.PHONY: all clean fclean re debug valgrind forbidden check
+test: $(NAME)
+	./$(NAME) > outfile
+	bash -c "diff <(awk '{sub(/^.{17} ?/, \"\"); print}' 19920104_091532.log) <(awk '{sub(/^.{17} ?/, \"\"); print}' outfile)"
+	$(RM) outfile
+
+.PHONY: all clean fclean re debug valgrind forbidden check test

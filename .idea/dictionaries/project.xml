@@ -3,6 +3,9 @@
     <words>
       <w>cxxflags</w>
       <w>idflags</w>
+      <w>noexpandtab</w>
+      <w>tomoki</w>
+      <w>tomsato</w>
     </words>
   </dictionary>
 </component>
