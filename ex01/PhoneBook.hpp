@@ -16,21 +16,25 @@
 
 class PhoneBook
 {
-  private:
-	Contact contacts_[8];
-	int index_;
-	int count_;
+private:
+    Contact _contacts[8];
+    int _index;
+    int _count;
 
-  public:
-	PhoneBook();
-	~PhoneBook();
-	PhoneBook(const PhoneBook &other);
-	PhoneBook &operator=(const PhoneBook &other);
+public:
+    PhoneBook();
 
-	void addContact(const Contact &contact);
-	void searchContact();
-	void searchContact(int index) const;
-	void exit();
+    ~PhoneBook();
+
+    PhoneBook(const PhoneBook &other);
+
+    PhoneBook &operator=(const PhoneBook &other);
+
+    void addContact(const Contact &contact);
+
+    void searchContact() const;
+
+    void searchContact(int index) const;
 };
 
 #endif

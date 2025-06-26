@@ -16,80 +16,85 @@ Contact::Contact()
 {
 }
 
-Contact::Contact(const Contact &other)
-{
-	*this = other;
-}
-
-Contact &Contact::operator=(const Contact &other)
-{
-	if (this != &other)
-	{
-		firstName_ = other.firstName_;
-		lastName_ = other.lastName_;
-		nickname_ = other.nickname_;
-		phoneNumber_ = other.phoneNumber_;
-		darkestSecret_ = other.darkestSecret_;
-	}
-	return (*this);
-}
-
 Contact::~Contact()
 {
 }
 
-void Contact::setFirstName(std::string value)
+Contact::Contact(const Contact &other)
 {
-	firstName_ = value;
+    *this = other;
 }
 
-void Contact::setLastName(std::string value)
+Contact &Contact::operator=(const Contact &other)
 {
-	lastName_ = value;
+    if (this != &other)
+    {
+        _firstName = other._firstName;
+        _lastName = other._lastName;
+        _nickname = other._nickname;
+        _phoneNumber = other._phoneNumber;
+        _darkestSecret = other._darkestSecret;
+    }
+    return (*this);
 }
 
-void Contact::setNickname(std::string value)
+void Contact::setFirstName(const std::string &value)
 {
-	nickname_ = value;
+    _firstName = value;
 }
 
-void Contact::setPhoneNumber(std::string value)
+void Contact::setLastName(const std::string &value)
 {
-	phoneNumber_ = value;
+    _lastName = value;
 }
 
-void Contact::setDarkestSecret(std::string value)
+void Contact::setNickname(const std::string &value)
 {
-	darkestSecret_ = value;
+    _nickname = value;
+}
+
+void Contact::setPhoneNumber(const std::string &value)
+{
+    _phoneNumber = value;
+}
+
+void Contact::setDarkestSecret(const std::string &value)
+{
+    _darkestSecret = value;
 }
 
 std::string Contact::getFirstName() const
 {
-	return (firstName_);
+    return (_firstName);
 }
 
 std::string Contact::getLastName() const
 {
-	return (lastName_);
+    return (_lastName);
 }
 
 std::string Contact::getNickname() const
 {
-	return (nickname_);
+    return (_nickname);
 }
 
 std::string Contact::getPhoneNumber() const
 {
-	return (phoneNumber_);
+    return (_phoneNumber);
+}
+
+std::string Contact::get_darkest_secret() const
+{
+    return (_darkestSecret);
 }
 
 std::string Contact::getDarkestSecret() const
 {
-	return (darkestSecret_);
+    return (_darkestSecret);
 }
 
 bool Contact::isValid() const
 {
-	return (!firstName_.empty() && !lastName_.empty() && !nickname_.empty()
-		&& !phoneNumber_.empty() && !darkestSecret_.empty());
+    return (!_firstName.empty() && !_lastName.empty() && !_nickname.empty()
+            && !_phoneNumber.empty() && !_darkestSecret.empty());
 }
