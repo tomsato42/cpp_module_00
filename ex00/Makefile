@@ -44,7 +44,7 @@ $(OBJ_DIR)/%.o: %.cpp
 	$(CXX) $(CXXFLAGS) $(OPT) $(IDFLAGS) $(DEFINE) -fPIC -MMD -MP -c $< -o $@
 
 # ============ DEBUG BUILDS ============
-debug: f
+debug:
 	$(MAKE) __debug -j $(shell nproc)
 
 __debug: OPT    := -g -fsanitize=address -O1 -fno-omit-frame-pointer
